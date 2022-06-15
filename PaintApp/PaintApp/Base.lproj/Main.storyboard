@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PaintApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Be3-Pv-3Kt">
+                                <rect key="frame" x="560" y="26" width="374" height="79"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lLM-TR-WMk">
+                                    <size key="itemSize" width="66" height="82"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3UZ-vM-4kY">
+                                        <rect key="frame" x="0.0" y="-1.5" width="66" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iYN-bc-tcX">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="82"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="66" height="82"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-ef-2EG">
+                                <rect key="frame" x="2" y="26" width="500" height="114"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-Dk-0KQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="114"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="circle" imagePlacement="top">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxO-Jq-QuF">
+                                        <rect key="frame" x="100.5" y="0.0" width="99" height="114"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="rectangle" imagePlacement="top">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xem-Fp-grB">
+                                        <rect key="frame" x="200.5" y="0.0" width="99.5" height="114"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="triangle" imagePlacement="top">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68V-aU-heZ">
+                                        <rect key="frame" x="301" y="0.0" width="99.5" height="114"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line" imagePlacement="top">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7P-fp-Q7G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-1w-oIT">
+                                        <rect key="frame" x="401.5" y="0.0" width="98.5" height="114"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pen" imagePlacement="top">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="penButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hB4-bE-fT8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="CcQ-AA-r8c"/>
+                                    <constraint firstAttribute="width" constant="500" id="tvj-1b-YXq"/>
+                                </constraints>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I87-lW-fa4">
+                                <rect key="frame" x="506" y="68" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xK-6X-Y8x">
+                                <rect key="frame" x="506" y="42" width="24" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-KY-W4W" customClass="CanvasView" customModule="PaintApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="199" width="1024" height="1147"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ej-KY-W4W" firstAttribute="top" secondItem="mNK-ef-2EG" secondAttribute="bottom" constant="59" id="0qr-Sp-ddB"/>
+                            <constraint firstItem="Be3-Pv-3Kt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="5eT-HR-PZ2"/>
+                            <constraint firstItem="5ej-KY-W4W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7ma-zQ-Xqg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5ej-KY-W4W" secondAttribute="bottom" id="8Bv-lb-dfC"/>
+                            <constraint firstItem="mNK-ef-2EG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="8bV-Kf-dWC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Be3-Pv-3Kt" secondAttribute="trailing" constant="90" id="9ee-pY-4J1"/>
+                            <constraint firstItem="mNK-ef-2EG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="Bvx-Er-aZF"/>
+                            <constraint firstItem="Be3-Pv-3Kt" firstAttribute="leading" secondItem="I87-lW-fa4" secondAttribute="trailing" constant="5" id="JZK-CS-IHj"/>
+                            <constraint firstItem="I87-lW-fa4" firstAttribute="leading" secondItem="mNK-ef-2EG" secondAttribute="trailing" constant="4" id="K5p-eX-7da"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I87-lW-fa4" secondAttribute="bottom" constant="1247" id="KMx-aO-Zxb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5ej-KY-W4W" secondAttribute="trailing" id="Sax-iX-Cmz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Be3-Pv-3Kt" secondAttribute="bottom" constant="1241" id="bud-RX-VxP"/>
+                            <constraint firstItem="4xK-6X-Y8x" firstAttribute="leading" secondItem="I87-lW-fa4" secondAttribute="leading" id="yVP-HS-hnU"/>
+                            <constraint firstItem="I87-lW-fa4" firstAttribute="top" secondItem="4xK-6X-Y8x" secondAttribute="bottom" constant="2" id="zTE-yf-yPr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="5ej-KY-W4W" id="Gax-gi-1BD"/>
+                        <outlet property="collectionView" destination="Be3-Pv-3Kt" id="Z2M-oW-dhp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19.921875" y="83.89458272327964"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" width="100" height="100"/>
+        <image name="line" width="100" height="100"/>
+        <image name="pen" width="100" height="100"/>
+        <image name="rectangle" width="100" height="100"/>
+        <image name="triangle" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
