@@ -27,6 +27,16 @@ class ViewController: UIViewController {
         canvasView.drawMode = .pen
     }
     
+    @IBAction func rectangleButtonPressed(_ sender: UIButton) {
+        canvasView.drawMode = .rectangle
+    }
+    
+    @IBAction func triangleButtonPressed(_ sender: UIButton) {
+        canvasView.drawMode = .triangle
+    }
+    @IBAction func circleButtonPressed(_ sender: UIButton) {
+        canvasView.drawMode = .circle
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
