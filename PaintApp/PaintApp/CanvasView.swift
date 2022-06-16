@@ -19,14 +19,15 @@ struct Line {
     let color: UIColor
     var points: [(CGPoint, CGPoint)]
     var drawMode: DrawMode
+    var filled: Bool
 }
 
 class CanvasView: UIView {
     
     var lineColor: UIColor = .black
-    var lineWidth: CGFloat = 10
+    var lineWidth: CGFloat = 5
     var drawMode: DrawMode = .pen
-    
+    var filled: Bool = false
     private var lines: [Line] = []
     private var path: UIBezierPath!
     private var touchPoint: CGPoint!
@@ -61,7 +62,10 @@ class CanvasView: UIView {
                 case .triangle:
                     drawTriangleSecond(start: start, end: end)
                 }
-                
+                if line.filled {
+                    line.color.setFill()
+                    path.fill()
+                }
                 path.lineWidth = lineWidth
                 path.stroke()
             }
@@ -70,7 +74,7 @@ class CanvasView: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let start = touches.first?.location(in: self) else { return }
-        lines.append(Line(color: lineColor, points: [(start, lastPoint)], drawMode: drawMode))
+        lines.append(Line(color: lineColor, points: [(start, lastPoint)], drawMode: drawMode, filled: filled))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,6 +91,18 @@ class CanvasView: UIView {
         }
         
         lines.append(last)
+        setNeedsDisplay()
+    }
+    
+    func undoDraw() {
+        if lines.count > 0 {
+            lines.removeLast()
+            setNeedsDisplay()
+        }
+    }
+    
+    func clearCanvas() {
+        lines.removeAll()
         setNeedsDisplay()
     }
     
