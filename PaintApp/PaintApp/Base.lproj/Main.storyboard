@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Be3-Pv-3Kt">
-                                <rect key="frame" x="360" y="26" width="475" height="79"/>
+                                <rect key="frame" x="470" y="26" width="365" height="79"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lLM-TR-WMk">
                                     <size key="itemSize" width="66" height="82"/>
@@ -38,11 +38,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-ef-2EG">
-                                <rect key="frame" x="2" y="26" width="300" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-ef-2EG">
+                                <rect key="frame" x="2" y="26" width="410" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-Dk-0KQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="circle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -52,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxO-Jq-QuF">
-                                        <rect key="frame" x="60.5" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="70" y="0.0" width="60" height="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="rectangle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -62,7 +62,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xem-Fp-grB">
-                                        <rect key="frame" x="121.5" y="0.0" width="59.5" height="60"/>
+                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="triangle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -72,7 +72,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68V-aU-heZ">
-                                        <rect key="frame" x="182" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="210" y="0.0" width="60" height="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="line">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-1w-oIT">
-                                        <rect key="frame" x="243" y="0.0" width="57" height="60"/>
+                                        <rect key="frame" x="280" y="0.0" width="60" height="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="pen">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -91,20 +91,29 @@
                                             <action selector="penButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hB4-bE-fT8"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wia-iL-zdG">
+                                        <rect key="frame" x="350" y="0.0" width="60" height="60"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="4598686"/>
+                                        <connections>
+                                            <action selector="circleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oF-fo-9EF"/>
+                                            <action selector="cornerRadius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6v-Uq-f9Y"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CcQ-AA-r8c"/>
-                                    <constraint firstAttribute="width" constant="300" id="tvj-1b-YXq"/>
+                                    <constraint firstAttribute="width" constant="410" id="tvj-1b-YXq"/>
                                 </constraints>
                             </stackView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I87-lW-fa4">
-                                <rect key="frame" x="306" y="68" width="51" height="31"/>
+                                <rect key="frame" x="416" y="68" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kIB-1x-ccA"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xK-6X-Y8x">
-                                <rect key="frame" x="306" y="42" width="24" height="24"/>
+                                <rect key="frame" x="416" y="42" width="24" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -156,6 +165,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="4598686" width="512" height="512"/>
         <image name="circle" width="100" height="100"/>
         <image name="line" width="100" height="100"/>
         <image name="pen" width="100" height="100"/>

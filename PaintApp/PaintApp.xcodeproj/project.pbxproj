@@ -14,6 +14,14 @@
 		025E6F4F28583F7300A185D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 025E6F4E28583F7300A185D4 /* Assets.xcassets */; };
 		025E6F5228583F7300A185D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025E6F5028583F7300A185D4 /* LaunchScreen.storyboard */; };
 		025E6F5A2858862600A185D4 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6F592858862600A185D4 /* CanvasView.swift */; };
+		0277BD0F286D584600233E96 /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BD0E286D584600233E96 /* Memento.swift */; };
+		027C730A286C17B5004DC38E /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C7309286C17B5004DC38E /* Shape.swift */; };
+		027C730D286C19D2004DC38E /* ShapeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C730C286C19D2004DC38E /* ShapeFactory.swift */; };
+		027C730F286C1A7E004DC38E /* LineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C730E286C1A7E004DC38E /* LineFactory.swift */; };
+		027C7311286C1AD8004DC38E /* RectangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C7310286C1AD8004DC38E /* RectangleFactory.swift */; };
+		027C7313286C1BA9004DC38E /* CornerTriangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C7312286C1BA9004DC38E /* CornerTriangleFactory.swift */; };
+		027C7315286C1C93004DC38E /* CircleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C7314286C1C93004DC38E /* CircleFactory.swift */; };
+		027C7317286C217F004DC38E /* TriangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C7316286C217F004DC38E /* TriangleFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		025E6F5128583F7300A185D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		025E6F5328583F7300A185D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		025E6F592858862600A185D4 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		0277BD0E286D584600233E96 /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
+		027C7309286C17B5004DC38E /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		027C730C286C19D2004DC38E /* ShapeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeFactory.swift; sourceTree = "<group>"; };
+		027C730E286C1A7E004DC38E /* LineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFactory.swift; sourceTree = "<group>"; };
+		027C7310286C1AD8004DC38E /* RectangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleFactory.swift; sourceTree = "<group>"; };
+		027C7312286C1BA9004DC38E /* CornerTriangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerTriangleFactory.swift; sourceTree = "<group>"; };
+		027C7314286C1C93004DC38E /* CircleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleFactory.swift; sourceTree = "<group>"; };
+		027C7316286C217F004DC38E /* TriangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 		025E6F4428583F7100A185D4 /* PaintApp */ = {
 			isa = PBXGroup;
 			children = (
+				027C730B286C1835004DC38E /* ShapeFactory */,
 				025E6F4528583F7100A185D4 /* AppDelegate.swift */,
 				025E6F4728583F7100A185D4 /* SceneDelegate.swift */,
 				025E6F4928583F7100A185D4 /* ViewController.swift */,
@@ -66,8 +83,23 @@
 				025E6F5028583F7300A185D4 /* LaunchScreen.storyboard */,
 				025E6F5328583F7300A185D4 /* Info.plist */,
 				025E6F592858862600A185D4 /* CanvasView.swift */,
+				027C7309286C17B5004DC38E /* Shape.swift */,
+				0277BD0E286D584600233E96 /* Memento.swift */,
 			);
 			path = PaintApp;
+			sourceTree = "<group>";
+		};
+		027C730B286C1835004DC38E /* ShapeFactory */ = {
+			isa = PBXGroup;
+			children = (
+				027C730C286C19D2004DC38E /* ShapeFactory.swift */,
+				027C730E286C1A7E004DC38E /* LineFactory.swift */,
+				027C7310286C1AD8004DC38E /* RectangleFactory.swift */,
+				027C7312286C1BA9004DC38E /* CornerTriangleFactory.swift */,
+				027C7314286C1C93004DC38E /* CircleFactory.swift */,
+				027C7316286C217F004DC38E /* TriangleFactory.swift */,
+			);
+			path = ShapeFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +173,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027C7313286C1BA9004DC38E /* CornerTriangleFactory.swift in Sources */,
+				027C730D286C19D2004DC38E /* ShapeFactory.swift in Sources */,
+				027C730A286C17B5004DC38E /* Shape.swift in Sources */,
 				025E6F4A28583F7100A185D4 /* ViewController.swift in Sources */,
+				027C730F286C1A7E004DC38E /* LineFactory.swift in Sources */,
 				025E6F4628583F7100A185D4 /* AppDelegate.swift in Sources */,
+				027C7315286C1C93004DC38E /* CircleFactory.swift in Sources */,
 				025E6F5A2858862600A185D4 /* CanvasView.swift in Sources */,
+				027C7311286C1AD8004DC38E /* RectangleFactory.swift in Sources */,
+				0277BD0F286D584600233E96 /* Memento.swift in Sources */,
 				025E6F4828583F7100A185D4 /* SceneDelegate.swift in Sources */,
+				027C7317286C217F004DC38E /* TriangleFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

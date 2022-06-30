@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     }
 
     @objc private func tap () {
-        print("Tap happend")
         canvasView.undoDraw()
     }
     
@@ -64,6 +63,10 @@ class ViewController: UIViewController {
     }
     @IBAction private func circleButtonPressed(_ sender: UIButton) {
         canvasView.drawMode = .circle
+    }
+    
+    @IBAction func cornerRadius(_ sender: UIButton) {
+        canvasView.drawMode = .cornerTriangle
     }
 }
 
