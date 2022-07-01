@@ -8,11 +8,12 @@
 import UIKit
 
 class CanvasView: UIView {
-    lazy var caretaker = Caretaker(originator: self)
+    lazy var caretaker = Caretaker(painter: self)
     var lineColor: UIColor = .black
     var lineWidth: CGFloat = 5
     var drawMode: ShapeType = .pen
     var filled: Bool = false
+    
     private var shapes: [ShapeViewModel] = []
     private var path: UIBezierPath!
     private var touchPoint: CGPoint!
@@ -20,13 +21,12 @@ class CanvasView: UIView {
     private var lastPoint: CGPoint = CGPoint(x: 0, y: 0)
     
     func save() -> Memento {
-        return ConcreteMemento(shape: shapes[shapes.count - 1])
+        return ConcreteMemento(shape: self.shapes)
     }
     
     func restore(memento: Memento) {
         guard let memento = memento as? ConcreteMemento else { return }
-        //self.shapes = memento.shapes
-        shapes.append(memento.shapes)
+        self.shapes = memento.shapes
     }
     
     override func draw(_ rect: CGRect) {
@@ -36,13 +36,13 @@ class CanvasView: UIView {
                 let factory = shape.type.factory
                 let configuration = ShapeConfiguration(startPoint: start, endPoint: end, isFileld: shape.filled, color: shape.color)
                 path = factory.create(configuration: configuration)
-                caretaker.backup()
                 path.stroke()
             }
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if shapes.isEmpty { caretaker.save() }
         guard let start = touches.first?.location(in: self) else { return }
         let viewModel = ShapeViewModel(color: lineColor, points: [(start, lastPoint)], type: drawMode, filled: filled)
         shapes.append(viewModel)
@@ -61,16 +61,19 @@ class CanvasView: UIView {
             last.points.append((touchPoint, touchPoint))
         }
         shapes.append(last)
-        
         setNeedsDisplay()
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        caretaker.save()
+    }
+
     func undoDraw() {
 //        if shapes.count > 0 {
 //            shapes.removeLast()
 //            setNeedsDisplay()
 //        }
-        caretaker.undo()
+        caretaker.undo(steps: 1)
         setNeedsDisplay()
     }
     
@@ -78,6 +81,5 @@ class CanvasView: UIView {
         shapes.removeAll()
         setNeedsDisplay()
     }
-    
     
 }

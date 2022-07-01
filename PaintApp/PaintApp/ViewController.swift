@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         undoRemoveButton.addGestureRecognizer(longGesture)
     }
 
-    @objc private func tap () {
+    @objc private func tap() {
         canvasView.undoDraw()
     }
     

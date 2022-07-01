@@ -9,38 +9,54 @@ import Foundation
 import UIKit
 
 protocol Memento {
-    var shapes: ShapeViewModel { get }
+    var shapes: [ShapeViewModel] { get }
 }
 
 class ConcreteMemento: Memento {
-    private(set) var shapes: ShapeViewModel
+    private(set) var shapes: [ShapeViewModel]
     
-    public init(shape: ShapeViewModel) {
+    public init(shape: [ShapeViewModel]) {
         self.shapes = shape
     }
 }
 
 class Caretaker {
     
-    private var memento = [Memento] ()
-    private var originator: CanvasView
+    private var states: [Memento] = []
+    private var painter: CanvasView
+    private var currentIndex: Int = 0
     
-    init(originator: CanvasView) {
-        self.originator = originator
+    init(painter: CanvasView) {
+        self.painter = painter
     }
     
-    func backup() {
-        memento.append(originator.save())
+    func save() {
+        let tail = states.count - 1 - currentIndex
+        if tail > 0 { states.removeLast(tail) }
+        
+        states.append(painter.save())
+        currentIndex = states.count - 1
+    }
+        
+    func undo(steps: Int) {
+        guard steps <= currentIndex else { return }
+
+        currentIndex -= steps
+        painter.restore(memento: states[currentIndex])
+//
+//        guard !states.isEmpty else { return }
+//        let removedMemento = states.removeLast()
+//
+//        painter.restore(memento: removedMemento)
     }
     
-    func undo() {
-        guard !memento.isEmpty else { return }
-//        print(memento)
-        let removedMemento = memento.removeLast()
-        print("Restoring state to: \(removedMemento.shapes)")
-        originator.restore(memento: removedMemento)
+    func redo(steps: Int) {
+        let newIndex = currentIndex + steps
+        guard newIndex < states.count - 1 else { return }
+        
+        currentIndex = newIndex
+        painter.restore(memento: states[currentIndex])
     }
-   
 }
 
 

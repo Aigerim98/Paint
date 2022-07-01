@@ -41,7 +41,7 @@ struct ShapeViewModel {
     var filled: Bool
 }
 
-struct ShapeConfiguration{
+struct ShapeConfiguration {
     let startPoint: CGPoint
     let endPoint: CGPoint
     let isFileld: Bool
